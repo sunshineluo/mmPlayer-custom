@@ -1,0 +1,551 @@
+/*主体样式*/
+* {
+    user-select: none;
+}
+
+p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.hover {
+    transition: 0.5s;
+}
+
+//滚动条样式
+::-webkit-scrollbar {
+    background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffffb3;
+}
+
+//弹窗样式
+.mm-dialog-box {
+    backdrop-filter: blur(10px);
+}
+
+.mm-dialog-box .mm-dialog-wrapper .mm-dialog-content {
+    background: #ffffff1a !important;
+}
+
+.mm-dialog-box .mm-dialog-wrapper .mm-dialog-content .mm-dialog-head {
+    //弹窗标题
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.mm-dialog-box .mm-dialog-wrapper .mm-dialog-content .mm-dialog-btns div {
+    //弹窗确认
+    font-size: 14px !important;
+    transition: 0.3s;
+}
+
+.mm-dialog-box .mm-dialog-wrapper .mm-dialog-content .mm-dialog-btns div:hover {
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .mm-dialog-box .mm-dialog-wrapper .mm-dialog-content .mm-dialog-btns div {
+        border-top: 1px solid #ffffff33 !important;
+    }
+
+    .mm-dialog-box .mm-dialog-wrapper .mm-dialog-content .mm-dialog-btns div:not(:nth-of-type(1)) {
+        border-left: 1px solid #ffffff33 !important;
+    }
+
+    //按钮美化
+    .mm-btn-cancel,
+    .mm-btn-confirm {
+        transition: 0.3s;
+    }
+
+    .mm-btn-cancel:hover {
+        background-color: #ffffff26;
+        transition: 0.3s;
+        border-radius: 0px 0px 0px 10px;
+    }
+
+    .mm-btn-confirm:hover {
+        background-color: #ffffff26;
+        transition: 0.3s;
+        border-radius: 0px 0px 10px 0px;
+    }
+}
+
+//通知样式
+.mm-toast.mm-toast-center {
+    top: 3% !important;
+    margin-top: auto !important;
+}
+
+@media (max-width: 768px) {
+    .mm-toast.mm-toast-center {
+        top: 50% !important;
+        margin-top: -20px !important;
+    }
+}
+
+.mm-toast {
+    background: #00000033 !important;
+    backdrop-filter: blur(20px);
+}
+
+/*导航栏*/
+//调整布局
+.mm-header .header {
+    display: flex;
+    align-items: center;
+}
+
+//站点标题
+.header a {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .header a {
+        margin-left: 25px;
+        transform: translateY(14%);
+    }
+}
+
+//导航栏背景
+@media (max-width: 768px) {
+    .mm-header {
+        background: #0000001f !important;
+        backdrop-filter: blur(10px);
+    }
+}
+
+//去除非移动端导航栏滚动条
+@media (min-width: 768px) {
+    .music-btn::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.music-btn::-webkit-scrollbar {
+    height: 4px;
+}
+
+//登录登出按钮
+.mm-header .user-btn {
+    border: 1px solid hsla(0, 0%, 100%, .6);
+    height: 28px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: hsla(0, 0%, 100%, .6);
+    border-radius: 2px;
+    font-size: 13px;
+    line-height: 26px;
+    overflow: hidden;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.mm-header .user-btn:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .mm-header .user-info i {
+        display: none;
+    }
+}
+
+/*菜单栏*/
+//按钮动画
+.music-btn span {
+    transition: 0.3s;
+}
+
+.music-btn span:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+//按钮大小
+.music-btn span {
+    padding: 0 16px !important;
+}
+
+/*列表*/
+//内容高度
+.music .music-content .music-left .music-list {
+    height: 90% !important;
+}
+
+//标题加粗
+.list-header {
+    font-weight: bold;
+}
+
+//选中歌曲
+.list-item {
+    transition: 0.3s;
+}
+
+.list-item.on {
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+//列表间距
+@media (min-width: 768px) {
+
+    .list-item .list-artist,
+    .list-item .list-album {
+        width: 180px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .list-item .list-artist,
+    .list-item .list-album {
+        width: 128px !important;
+    }
+}
+
+//右侧边距
+.list-album {
+    padding-right: 4px !important;
+}
+
+.list-artist {
+    padding-right: 8px !important;
+}
+
+//图标动画
+.list-item:not([class*='list-header']):hover .list-name .list-menu {
+    transition: 0.5s;
+}
+
+//内容动画
+.comment-list,
+.musicList,
+.topList,
+.userList,
+.search {
+    animation: sub_menus;
+    animation-duration: 0.5s;
+    -webkit-animation: sub_menus 0.5s
+}
+
+/*歌词详情区*/
+//专辑样式
+.music-info dt img {
+    border-radius: 6px;
+}
+
+//歌曲名称样式
+.music-info dd1 {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+//歌词字体
+.music-lyric {
+    font-family: -webkit-pictograph;
+}
+
+//未高亮歌词
+.music-lyric .music-lyric-items {
+    font-size: 14px !important;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    padding: 0px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+//高亮歌词
+.music-lyric .music-lyric-items .on {
+    color: #fff !important;
+    font-size: 17px !important;
+    font-weight: bold;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*搜索页*/
+i.fad.fa-fire {
+    top: 11px;
+    margin-left: 2px;
+    margin-right: 10px;
+    font-size: 1.05rem;
+}
+
+.search-head {
+    padding: 15px !important;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    padding-bottom: 2px !important;
+    border-radius: 6px 6px 0px 0px;
+}
+
+.search-head.hot {
+    padding: 0px 15px !important;
+    border-radius: 0px 0px 6px 6px !important;
+}
+
+//热词动画
+.search .search-head span {
+    transition: 0.3s;
+}
+
+.search .search-head span:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+//移动端隐藏热搜
+@media (max-width: 768px) {
+    .search-head.hot {
+        display: none !important;
+    }
+
+    .search-head {
+        padding-bottom: 15px !important;
+        border-radius: 4px !important;
+    }
+}
+
+/*专辑页面*/
+//标题
+.topList-head {
+    text-align: center;
+    font-weight: bold;
+    padding: 4px 0px 20px 0px !important;
+}
+
+//圆角
+.topList .list-item .topList-img .cover-img,
+.cover-img {
+    border-radius: 6px;
+    transition: all .2s linear;
+}
+
+//鼠标移入动画
+.topList .list-item .topList-img .cover-img:hover,
+.cover-img:hover {
+    transform: scale(1.02);
+    transition: all .2s linear;
+}
+
+//专辑下文字
+.topList .list-item .topList-item .name,
+.userList .list-item .userList-item .name {
+    margin-top: 10px;
+    transition: all .2s linear;
+}
+
+.topList .list-item .topList-item .name:hover,
+.userList .list-item .userList-item .name:hover {
+    color: white;
+    transition: all .2s linear;
+}
+
+/*评论区*/
+span.comment-title-num {
+    padding: 4px;
+    background-color: #ffffff;
+    color: #8d8f91;
+    border-radius: 4px;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+//评论区文字不折叠
+.comment .comment-list .comment-item .comment-item-disc {
+    text-overflow: unset !important;
+    white-space: normal !important;
+}
+
+.comment .comment-list .comment-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*底栏*/
+
+//调整底栏高度
+.music .music-bar {
+    height: 120px !important;
+}
+
+//歌曲名称
+.music .music-bar .music-music .music-bar-info {
+    margin-bottom: 6px;
+    margin-left: 2px;
+    font-size: 14px;
+}
+
+span.music-name {
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+span.music-singer {
+    font-size: 13px;
+    margin-left: 2px;
+}
+
+//控制按钮
+.music .music-bar .music-bar-btns {
+    width: 160px !important;
+}
+
+@media (min-width: 520px) {
+
+    ///暂停播放
+    .control-play.pointer {
+        background-color: transparent !important;
+        transition: .2s;
+        border-radius: 20% !important;
+        padding: 4px;
+    }
+
+    .control-play.pointer:hover {
+        background-color: rgba(209, 209, 214, 0.28) !important;
+        transition: .2s;
+    }
+
+    .control-play.pointer:active {
+        transform: scale(.92);
+    }
+
+    .control-play.pointer i {
+        font-size: 44px !important;
+    }
+
+    ///上一曲、下一曲
+    .pointer.iconfont.icon-prev,
+    .pointer.iconfont.icon-next {
+        font-size: 34px !important;
+        transition: .2s;
+        border-radius: 20% !important;
+        padding: 2px;
+    }
+
+    .pointer.iconfont.icon-prev:hover,
+    .pointer.iconfont.icon-next:hover {
+        background-color: rgba(209, 209, 214, 0.28) !important;
+        transition: .2s;
+    }
+
+    .pointer.iconfont.icon-prev:active,
+    .pointer.iconfont.icon-next:active {
+        transform: scale(.92);
+    }
+}
+
+//其他按钮点击效果
+.music .music-bar .mode:active,
+.music .music-bar .comment:active,
+.volume-icon:active {
+    transform: scale(.92);
+    transition: 0.5s;
+}
+
+//进度条
+.mmProgress.music-progress {
+    transform: translateX(-6px);
+    width: 100%;
+}
+
+
+/*移动端适配*/
+//底部控制区
+@media (max-width: 768px) {
+    .music .music-bar .music-bar-info span {
+        display: revert !important;
+    }
+
+    .music .music-bar {
+        height: 96px !important;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .music .music-content {
+        height: calc(96% - 80px) !important;
+        margin-bottom: 22px;
+    }
+
+    .music .music-bar {
+        height: 74px !important;
+    }
+
+    .music .music-bar .music-bar-btns {
+        width: 56% !important;
+    }
+}
+
+
+/*其他功能*/
+//移动端按钮隐藏
+@media (max-width: 960px) {
+    .user-btn.showlrc {
+        display: none;
+    }
+}
+
+//按钮左边距
+.user-btn.showlrc {
+    margin-left: 15px;
+}
+
+//全屏歌词
+.show-lrc .music .music-right {
+    display: block !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    transition: all .7s cubic-bezier(.42, 0, 0, 1.01);
+}
+
+.show-lrc .music-lyric .music-lyric-items {
+    line-height: 35px !important;
+    font-size: 16px !important;
+    transition: 0.5s;
+}
+
+.show-lrc .music-lyric .music-lyric-items .on {
+    font-size: 20px !important;
+    transition: 0.5s;
+}
+
+.music .music-right {
+    transition: all .7s cubic-bezier(.42, 0, 0, 1.01);
+}
+
+//移动端自动调整
+@media (max-width: 960px) {
+    .show-lrc .music .music-right {
+        display: none !important;
+    }
+}
+
+.music .music-right.show {
+    display: block !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+}
