@@ -3,7 +3,7 @@
   <header class="mm-header">
     <h1 class="header">
       <a href="/#/music/playlist">
-        無名の音乐站
+        音乐在线
       </a>
     </h1>
     <dl class="user">
@@ -139,7 +139,7 @@ export default {
         creator.avatarUrl = toHttps(creator.avatarUrl)
         this.user = creator
         setTimeout(() => {
-          this.$mmToast(`${this.user.nickname} 欢迎来到無名の音乐站`)
+          this.$mmToast(`${this.user.nickname} 欢迎使用`)
         }, 200)
       })
     },
