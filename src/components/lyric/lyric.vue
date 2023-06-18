@@ -11,12 +11,7 @@
         <dd>{{ currentMusic.album }}</dd>
       </template>
       <template v-else>
-        <dd>欢迎来到&nbsp;無名の音乐站</dd>
-        <!--<dd>
-          <a class="hover" target="_blank" href="https://github.com/maomao1996">
-            <mm-icon type="github" :size="14" />&nbsp;茂茂
-          </a>
-        </dd>-->
+        <dd>欢迎来到&nbsp;音乐在线</dd>
       </template>
     </dl>
     <!--歌词-->
