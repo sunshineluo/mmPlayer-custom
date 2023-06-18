@@ -29,7 +29,7 @@ export default {
     // 获取歌单详情
     getPlaylistDetail(this.$route.params.id)
       .then(playlist => {
-        document.title = `${playlist.name} - 無名の音乐站`
+        document.title = `${playlist.name} - 音乐在线`
         this.list = playlist.tracks
         this._hideLoad()
       })
