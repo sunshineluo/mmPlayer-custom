@@ -41,14 +41,14 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     document.title =
-      (to.meta.title && `${to.meta.title} - 無名の音乐站`) ||
-      '無名の音乐站'
+      (to.meta.title && `${to.meta.title} - 音乐在线`) ||
+      '音乐在线'
     next()
   }
 })
 
 // 版权信息
-window.mmPlayer = window.mmplayer = `欢迎来到 無名の音乐站
+window.mmPlayer = window.mmplayer = `欢迎来到 音乐在线
 程序版本：V${VERSION}
 程序作者：茂茂
 Github：https://github.com/maomao1996/Vue-mmPlayer
