@@ -36,7 +36,7 @@ export function getPlaylistDetail(id) {
         }
         // 限制歌单详情最大 500
         const ids = trackIds
-          .slice(0, 500)
+          .slice(0, 50000)
           .map(v => v.id)
           .toString()
         getMusicDetail(ids).then(({ songs }) => {
